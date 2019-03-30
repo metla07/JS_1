@@ -63,6 +63,21 @@ let a = [{
 }, {
     name: 'phone10',
     price: 750
+}, {
+    name: 'phone11',
+    price: 350
+}, {
+    name: 'phone12',
+    price: 400
+}, {
+    name: 'phone13',
+    price: 500
+}, {
+    name: 'phone14',
+    price: 600
+}, {
+    name: 'phone15',
+    price: 750
 }];
 
 let Basket = {
@@ -81,22 +96,23 @@ let Basket = {
             count: 1
 
         }));
+        if (quantity == Basket.countTotalNumber()) {
+            let basketDisplay = document.querySelector('.basket_display');
+            let content = document.createElement('div');
+            content.className = 'block2';
+            let totalNumber = document.createElement('span');
+            totalNumber.className = 'span_1';
+            let totalPrise = document.createElement('span');
+            totalPrise.className = 'span_2';
+            let txtNumber = document.createTextNode("Количество товара в корзине  - " + this.countTotalNumber());
+            let txtPrise = document.createTextNode("Общая стоимость товара  - " + this.countTotalPrice());
+            totalNumber.appendChild(txtNumber);
+            totalPrise.appendChild(txtPrise);
+            content.appendChild(totalNumber);
+            content.appendChild(totalPrise);
 
-        let basketDisplay = document.querySelector('.basket_display');
-        let content = document.createElement('div');
-        content.className = 'block2';
-        let totalNumber = document.createElement('span');
-        totalNumber.className = 'span_1';
-        let totalPrise = document.createElement('span');
-        totalPrise.className = 'span_2';
-        let txtNumber = document.createTextNode("Количество товара в корзине  " + this.countTotalNumber());
-        let txtPrise = document.createTextNode("Общая стоимость товара  " + this.countTotalPrice());
-        totalNumber.appendChild(txtNumber);
-        totalPrise.appendChild(txtPrise);
-        content.appendChild(totalNumber);
-        content.appendChild(totalPrise);
-
-        basketDisplay.appendChild(content);
+            basketDisplay.appendChild(content);
+        };
 
     },
     countTotalNumber() {
@@ -118,9 +134,9 @@ let Basket = {
     }
 
 };
-let quantity = parseInt(prompt('Введите число от 0 - до 10  :'));
+let quantity = parseInt(prompt('Введите число от 0 - до 15  :'));
 
-if (quantity == 0 || isNaN(quantity) == true || quantity > 10) {
+if (quantity == 0 || isNaN(quantity) == true || quantity > 15) {
     let basketDisplay = document.querySelector('.basket_display');
     let content2 = document.createElement('div');
     content2.className = 'block_empty';
@@ -128,8 +144,8 @@ if (quantity == 0 || isNaN(quantity) == true || quantity > 10) {
     content2.appendChild(txtBlockEmpty);
     basketDisplay.appendChild(content2);
 } else {
- 
-    
+
+
     for (let i = 0; i < quantity; i++) {
         Basket.putProduct(a[i]);
 
