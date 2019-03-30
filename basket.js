@@ -120,7 +120,7 @@ let Basket = {
 };
 
 // если поменять количество товара в корзине на 1 (Basket.countTotalNumber() == 1) , тогда выведуться все товары по очереди .
-if (Basket.countTotalNumber() == 1) {
+if (Basket.countTotalNumber() == 0) {
     let basketDisplay = document.querySelector('.basket_display');
     let content2 = document.createElement('div');
     content2.className = 'block_empty';
