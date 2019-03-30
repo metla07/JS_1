@@ -32,53 +32,62 @@
       
   
 */
+// Рандомный массив 
+let getRandomPrice = function(){
+    return parseInt(Math.random() * 1000) + 10;
+}
 
-let a = [{
-    name: 'phone1',
-    price: 50
-}, {
-    name: 'phone2',
-    price: 100
-}, {
-    name: 'phone3',
-    price: 150
-}, {
-    name: 'phone4',
-    price: 200
-}, {
-    name: 'phone5',
-    price: 300
-}, {
-    name: 'phone6',
-    price: 350
-}, {
-    name: 'phone7',
-    price: 400
-}, {
-    name: 'phone8',
-    price: 500
-}, {
-    name: 'phone9',
-    price: 600
-}, {
-    name: 'phone10',
-    price: 750
-}, {
-    name: 'phone11',
-    price: 350
-}, {
-    name: 'phone12',
-    price: 400
-}, {
-    name: 'phone13',
-    price: 500
-}, {
-    name: 'phone14',
-    price: 600
-}, {
-    name: 'phone15',
-    price: 750
-}];
+let a = [];
+for (let i = 0; i < 100; ++i){
+    a[i] = { name: 'phone' + i, price: getRandomPrice()};
+}
+//Обычный массив
+// let a = [{
+//     name: 'phone1',
+//     price: 50
+// }, {
+//     name: 'phone2',
+//     price: 100
+// }, {
+//     name: 'phone3',
+//     price: 150
+// }, {
+//     name: 'phone4',
+//     price: 200
+// }, {
+//     name: 'phone5',
+//     price: 300
+// }, {
+//     name: 'phone6',
+//     price: 350
+// }, {
+//     name: 'phone7',
+//     price: 400
+// }, {
+//     name: 'phone8',
+//     price: 500
+// }, {
+//     name: 'phone9',
+//     price: 600
+// }, {
+//     name: 'phone10',
+//     price: 750
+// }, {
+//     name: 'phone11',
+//     price: 350
+// }, {
+//     name: 'phone12',
+//     price: 400
+// }, {
+//     name: 'phone13',
+//     price: 500
+// }, {
+//     name: 'phone14',
+//     price: 600
+// }, {
+//     name: 'phone15',
+//     price: 750
+// }];
 
 let Basket = {
     goodList: [],
@@ -105,7 +114,7 @@ let Basket = {
             let totalPrise = document.createElement('span');
             totalPrise.className = 'span_2';
             let txtNumber = document.createTextNode("Количество товара в корзине  - " + this.countTotalNumber());
-            let txtPrise = document.createTextNode("Общая стоимость товара  - " + this.countTotalPrice());
+            let txtPrise = document.createTextNode("Общая стоимость товара  - " + this.countTotalPrice() + ' руб.');
             totalNumber.appendChild(txtNumber);
             totalPrise.appendChild(txtPrise);
             content.appendChild(totalNumber);
@@ -137,9 +146,9 @@ let Basket = {
 
 
 
-let quantity = parseInt(prompt('Введите число от 0 - до 15  :'));
+let quantity = parseInt(prompt('Введите число от 0 - до 100  :'));
 
-if (quantity == 0 || isNaN(quantity) == true || quantity > 15) {
+if (quantity == 0 || isNaN(quantity) == true || quantity > 100) {
     let basketDisplay = document.querySelector('.basket_display');
     let content2 = document.createElement('div');
     content2.className = 'block_empty';
@@ -166,7 +175,7 @@ if (quantity == 0 || isNaN(quantity) == true || quantity > 15) {
 let basketDisplay = document.querySelector('.basket_display');
 let totalTotal = document.createElement('div');
 totalTotal.className = 'total_total';
-totalTotal.appendChild(document.createTextNode('Итоговая сумма  : ' + Basket.countTotalPrice()));
+totalTotal.appendChild(document.createTextNode('Итоговая сумма  : ' + Basket.countTotalPrice() + 'руб.'));
 basketDisplay.appendChild(totalTotal);
 
 console.log(Basket.goodList);
