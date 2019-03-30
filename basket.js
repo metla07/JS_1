@@ -118,9 +118,9 @@ let Basket = {
     }
 
 };
+let quantity = parseInt(prompt('Введите число от 0 - до 10  :'));
 
-// если поменять количество товара в корзине на 1 (Basket.countTotalNumber() == 1) , тогда выведуться все товары по очереди .
-if (Basket.countTotalNumber() == 0) {
+if (quantity == 0 || isNaN(quantity) == true || quantity > 10) {
     let basketDisplay = document.querySelector('.basket_display');
     let content2 = document.createElement('div');
     content2.className = 'block_empty';
@@ -128,13 +128,14 @@ if (Basket.countTotalNumber() == 0) {
     content2.appendChild(txtBlockEmpty);
     basketDisplay.appendChild(content2);
 } else {
-
-    for (let i = 0; i < a.length; i++) {
+ 
+    
+    for (let i = 0; i < quantity; i++) {
         Basket.putProduct(a[i]);
 
 
         // if (i % 2 == 0) {
-        //     Basket.putProduct(a[i]); //чтобы получить индекс 0 
+        //     Basket.putProduct(a[i]); //получаем чётный 0 товар
 
         // } else {
         //     Basket.putProduct(a[i]); //два раза кладём попавшийся нечётный продукт
