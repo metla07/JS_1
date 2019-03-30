@@ -134,6 +134,9 @@ let Basket = {
     }
 
 };
+
+
+
 let quantity = parseInt(prompt('Введите число от 0 - до 15  :'));
 
 if (quantity == 0 || isNaN(quantity) == true || quantity > 15) {
