@@ -199,7 +199,7 @@
      input_add.className = 'input_add';
      input_add.value = ('Добавить');
 
-     input_add.setAttribute("type", "submit");
+     input_add.setAttribute("type", "button");
      input_add.addEventListener('click', function (event) {
          event.stopPropagation();
          event.preventDefault();
