@@ -110,9 +110,11 @@ body {
 .input_add {
     width: 100px;
     height: 80px;
-    margin: 40px auto;
+    margin: 20px auto;
+    -webkit-cursor: pointer;
     cursor: pointer;
     border: none;
+    -webkit-border-radius: 20px;
     border-radius: 20px;
     text-align: center;
     outline: none;
@@ -134,7 +136,7 @@ body {
 
 .input_btn {
     margin: 30px auto;
-    width: 160px;
+    width: 200px;
     height: 100px;
     order: 2;
     cursor: pointer;
@@ -142,11 +144,12 @@ body {
     border-radius: 50%;
     outline: none;
     font-size: 28px;
+    text-align: center;
 }
 
 .input_btn_resset {
     margin: 30px auto;
-    width: 160px;
+    width: 200px;
     height: 100px;
     order: 3;
     cursor: pointer;
@@ -154,6 +157,7 @@ body {
     border-radius: 50%;
     outline: none;
     font-size: 28px;
+    text-align: center;
 }
 
 .placeOf_Goods {
